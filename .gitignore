@@ -1,1 +1,3 @@
 *.o
+/build
+/denseFlow_gpu_ copy.cpp
