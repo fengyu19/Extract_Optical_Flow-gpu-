@@ -1,6 +1,15 @@
-This is a sample code for extrating dense flow field given a video.
+I changed the original source code for own dataset.
+
+Requirements:
+opencv2.4
+cuda8.0
 
 Usage:
-./denseFlow_gpu -f test.avi -x tmp/flow_x -y tmp/flow_x -i tmp/image -b 20 -t 1 -d 0 -s 1
-test.avi: input video
-tmp: folder containing RGB images and optical flow images
+mkdir build
+cd build
+cmake -D CUDA_USE_STATIC_RUNTIME=OFF ..
+make
+./denseFlow_gpu -f vidFile -start x -end y -b bound -d device_id -s segment_number
+
+vidFile: folder contains all the videos
+segment_number: the number of segments proposed to get
